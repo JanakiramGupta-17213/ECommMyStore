@@ -1,8 +1,6 @@
-// components/products/products.js
 import React from 'react';
 import Product from './product/product';
 import { connect } from 'react-redux';
-import { addToCart } from '../../actions/cartActions';
 
 const Products = ({ products, onAddToCart }) => {
   if (!products.length) return <p>Loading...</p>;
@@ -26,7 +24,7 @@ const Products = ({ products, onAddToCart }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAddToCart: (productId, quantity) => dispatch(addToCart(productId, quantity)),
+    // onAddToCart: (productId, quantity) => dispatch(addToCart(productId, quantity)),
   };
 };
 

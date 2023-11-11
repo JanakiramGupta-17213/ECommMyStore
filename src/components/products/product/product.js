@@ -1,4 +1,3 @@
-// components/products/product/product.js
 import { Typography } from "@material-ui/core";
 import React from "react";
 
@@ -9,7 +8,7 @@ const Product = ({ product, onAddToCart }) => {
   return (
     <div className="col-md-3">
       <div className="card">
-        <img src={product.media.source} alt="" />
+        <img src={product.image} alt="" />
         <div className="card-body">
           <h2>{product.name}</h2>
           <p> ${product.price.formatted} </p>
