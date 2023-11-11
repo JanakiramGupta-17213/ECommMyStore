@@ -13,18 +13,29 @@ const Cart = (props) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        {props.cartItems.map((item) => {
+      {props.cartItems.length > 0 ?
+        props.cartItems.map((item) => {
           return (
-            <div className="col-sm-4" key={item.id}>
-              <h3>{item.name}</h3>
-              <p>Quantity: {item.quantity}</p>
-              <div className="btn-group">
-                <button className="btn btn-default" onClick={() => addToCart(item)}>+</button>
-                <button className="btn btn-default" onClick={() => removeProductFromCart(item)}>-</button>
+            <div className="col-md-3" key={item.id}>
+              <div className="card">
+                <img className="product_image" src={item.image} alt="" />
+                <div className="card-body">
+                  <h5>{item.title}</h5>
+                  <p> ${item.price} </p>
+                  <p> Category : {item.category} </p>
+                  <p>Quantity: {item.quantity}</p>
+                </div>
+                <div className="btn-group">
+                  <button className="btn btn-primary" style={{ marginRight: "20px"}} onClick={() => addToCart(item)}>+</button>
+                  <button className="btn btn-primary" onClick={() => removeProductFromCart(item)}>-</button>
+                </div>
               </div>
             </div>
           );
-        })}
+        })
+        : 
+        <div>No Items in Cart</div>
+        }
       </div>
     </div>
   );

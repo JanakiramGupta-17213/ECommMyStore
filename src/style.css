@@ -4,9 +4,24 @@
   }
   .card {
     margin-bottom: 15px;
+    padding: 1rem;
+    height: 105vh;
   }
   nav {
     margin-bottom: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
+  }
+
+  .product_description {
+    white-space: nowrap; 
+    width: 80%; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 10px;
+    height: 10vh;
+  }
+
+  .product_image {
+    height: 300px;
   }
   
