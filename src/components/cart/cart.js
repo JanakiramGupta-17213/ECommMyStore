@@ -1,20 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addtoCart,removeToCart } from '../../actions/productsActions';
 
-const Cart = ({ cartItems }) => {
+const Cart = (props) => {
+  const addToCart = (product) => {
+    props.addProductCart(product);
+  }
+
+  const removeProductFromCart = (product) => {
+    props.removeProductCart(product);
+  }
   return (
     <div className="container-fluid">
       <div className="row">
-        {cartItems.map((item) => (
-          <div className="col-sm-4" key={item.id}>
-            <h3>{item.name}</h3>
-            <p>Quantity: {item.quantity}</p>
-            <div className="btn-group">
-              <button className="btn btn-default">+</button>
-              <button className="btn btn-default">-</button>
+        {props.cartItems.map((item) => {
+          return (
+            <div className="col-sm-4" key={item.id}>
+              <h3>{item.name}</h3>
+              <p>Quantity: {item.quantity}</p>
+              <div className="btn-group">
+                <button className="btn btn-default" onClick={() => addToCart(item)}>+</button>
+                <button className="btn btn-default" onClick={() => removeProductFromCart(item)}>-</button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -22,8 +32,15 @@ const Cart = ({ cartItems }) => {
 
 const mapStateToProps = (state) => {
   return {
-    cartItems: state.cart.cartItems,
+    cartItems: state.products.cartData,
   };
 };
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addProductCart: (product) => dispatch(addtoCart(product)),
+    removeProductCart: (product) => dispatch(removeToCart(product)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

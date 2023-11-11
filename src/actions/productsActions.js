@@ -16,3 +16,20 @@ export const getProducts = () => {
       })
   }
 }
+
+
+export const addtoCart = (product) => {
+  return {
+    type: 'ADD_TO_CART',
+    data: product
+  }
+}
+
+
+export const removeToCart = (product) => {
+  return {
+    type: 'REMOVE_TO_CART',
+    data: product
+  }
+}
+

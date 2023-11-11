@@ -1,7 +1,8 @@
 import "./style.css";
-import Navbar  from './components/navbar/navbar';
+import Navbar from './components/navbar/navbar';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/home/home";
+import Cart from './components/cart/cart';
 
 export default function App() {
   return (
@@ -11,6 +12,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
         </Switch>
       </div>

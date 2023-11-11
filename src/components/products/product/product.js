@@ -3,7 +3,7 @@ import React from "react";
 
 const Product = ({ product, onAddToCart }) => {
   const handleAddToCart = () => {
-    onAddToCart(product.id, 1);
+    onAddToCart(product.id);
   };
   return (
     <div className="col-md-3">

@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './product/product';
 import { connect } from 'react-redux';
 
-const Products = ({ products, onAddToCart }) => {
+const Products = ({ products, addToCart }) => {
   if (!products.length) return <p>Loading...</p>;
 
   return (
@@ -12,7 +12,7 @@ const Products = ({ products, onAddToCart }) => {
           {products.map((product, i) => (
             <Product
               product={product}
-              onAddToCart={() => onAddToCart(product.id, 1)}
+              onAddToCart={() => addToCart(product)}
               key={i}
             />
           ))}
