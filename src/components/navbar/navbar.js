@@ -8,6 +8,7 @@ const PrimarySearchAppBar = (props) => {
   const location = useLocation();
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="app-heading">E-Commerce Application</div>
       <NavLink to="/cart">
 
       {location.pathname === "/" && (
@@ -16,7 +17,7 @@ const PrimarySearchAppBar = (props) => {
             component={Cart}
             to="/cart"
             aria-label="Show cart items"
-            className="btn btn-outline-success my-2 my-sm-0"
+            className="btn btn-outline-success my-2 my-sm-0 text-nowrap"
             type="submit"
           >
             Cart - {props.cartItems.length}

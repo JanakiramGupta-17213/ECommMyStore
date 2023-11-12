@@ -11,13 +11,14 @@ const Cart = (props) => {
     props.removeProductCart(product);
   }
   return (
-    <div className="container-fluid">
-      <div className="row">
+    <div className="container-fluid product-listing-block">
+      <h1>Cart Items</h1>
+      <div className="row mt-3">
       {props.cartItems.length > 0 ?
         props.cartItems.map((item) => {
           return (
-            <div className="col-md-3" key={item.id}>
-              <div className="card">
+            <div className="col-md-3" key={item.id} style={{marginBottom: "2%"}}>
+              <div className="card cart-item">
                 <img className="product_image" src={item.image} alt="" />
                 <div className="card-body">
                   <h5>{item.title}</h5>

@@ -7,7 +7,7 @@ const Products = ({ products, addToCart }) => {
 
   return (
     <div className="product-sec">
-      <div className="container-fluid">
+      <div className="container-fluid product-listing-block">
         <div className="row">
           {products.map((product, i) => (
             <Product
